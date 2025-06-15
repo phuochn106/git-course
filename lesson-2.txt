@@ -4,16 +4,7 @@ Answer for question 1:
     git add .                  # Thêm tất cả file
     git commit -m "message"    # Commit thay đổi
 
-Answer for question 2:
-Hãy tưởng tượng có 1 folder lesson-2 mới được tạo. Hãy liệt kê các file theo từng
-vùng sau khi thao tác một loạt các lệnh sau 
-    a. Tạo 3 file: file1, file2, file3
-    b. Chạy lệnh: git init 
-    c. Chạy lệnh: git commit -m”init project” >> chỉ có folder được đưa lên repo
-    d. Chạy lệnh: git add file1
-    e. Chạy lệnh: git commit -m”add file1” >> file 1 được đưa lên repo
-    f. Chạy lệnh: git add file
-
+Answer for question 2
 Lệnh f này ko biết có phải ghi thiếu tên file không :D 
 1. Nếu là lệnh:  git add file2, lúc đó, file theo từng vùng sẽ như sau:
     Working Directory: file1, file2,file3
