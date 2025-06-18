@@ -1,0 +1,66 @@
+Câu 1. Giải thích câu lệnh: 
++ git commit --amend : Thay đổi commit message, chỉnh sửa message ở chế độ insert
++ git commit --amend -m”<message>” : thay đổi commit message, ghi đè message cũ bằng message này
++ git restore --staged <file> : đưa 1 file từ vùng staging về working director
++ git reset HEAD~1 : Đưa từ vùng repository về working directory (uncommit)
+
+
+Câu 2: 
+Các file theo từng vùng, các commit và message tương ứng sau khi thao tác một loạt các lệnh là: 
+
+a. Tạo 3 file: file1, file2, file3
+b. Chạy lệnh: git init
+    Vùng working: file1, file2, file3
+    Vùng Staging: empty
+    Vùng Repository: empty
+
+c. Chạy lệnh: git commit -m”init project”
+    Báo message ko có file nào để commit
+
+d. Chạy lệnh: git add file1
+    Vùng working: file1, file2, file3
+    Vùng Staging: file1
+    Vùng Repository: empty
+
+e. Chạy lệnh: git commit -m”add file”
+    Vùng working: file1, file2, file3
+    Vùng Staging: empty
+    Vùng Repository: file1
+
+f. Chạy lệnh: git add .
+    Vùng working: file1, file2, file3
+    Vùng Staging: file2, file3
+    Vùng Repository: file1
+
+g. Chạy lệnh: git restore --staged file2
+    Vùng working: file1, file2, file3
+    Vùng Staging: file1, file3
+    Vùng Repository: file1 
+
+h. Chạy lệnh: git commit -m”add all files”
+    Vùng working: file1, file2, file3
+    Vùng Staging: empty
+    Vùng Repository: file1,file3
+
+i. Chạy lệnh: git reset HEAD~1
+    Vùng working: file1, file2, file3
+    Vùng Staging: empty
+    Vùng Repository: file1
+
+Câu 3: 
+a. Chạy lệnh git init
+b. Tạo file file1.txt, file2.txt, oops/file3.txt
+c. Thêm file .gitignore, thêm vào 2 dòng:
+    i. file1.txt
+    ii. oops/
+d. Chạy lệnh: git add .
+    Vùng working: file1.txt, file2.txt, oops/file3.txt
+    Vùng Staging: file2, file .gitignore
+    Vùng Repository: empty
+e. Chạy lệnh: git commit -m"init project"
+    Vùng working: file1.txt, file2.txt, oops/file3.txt
+    Vùng Staging: empty
+    Vùng Repository: file2.txt, file .gitignore
+
+
+
