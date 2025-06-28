@@ -1,0 +1,117 @@
+Câu 1:
+    git commit --amend
+    => Dùng để chỉnh sửa lại commit message mới nhất
+
+    git reset HEAD~3
+    => undo lại 3 commit cuối cùng trên vùng repository. Code của 3 lần commit này vẫn còn trên vùng working
+    (remove 3 commit cuối khỏi vùng repository)
+
+Câu 2:
+a. Tạo thư mục lesson-8
+b. Tạo file: file1, file2, file3
+c. Chạy lệnh: git init
+    Main:
+        working directory:file1, file2, file3
+        staging:
+        repo:
+
+d. Chạy lệnh: git add file1
+    Main:
+        working directory:file1, file2, file3
+        staging:file1
+        repo:
+    
+e. Chạy lệnh: git commit -m”init project”
+    Main:
+        working directory:file1, file2, file3
+        staging:
+        repo:file1
+
+f. Chạy lệnh: git checkout -b feat/feature-A
+    Main:
+        working directory:file1, file2, file3
+        staging:
+        repo:file1
+
+    feat/feature-A:
+        working directory:file1, file2, file3
+        staging:
+        repo:file1    
+
+g. Chạy lệnh: git add file2
+    Main:
+        working directory:file1, file2, file3
+        staging:
+        repo:file1
+
+    feat/feature-A:
+        working directory:file1, file2, file3
+        staging:file2
+        repo:file1    
+
+h. Chạy lệnh: git commit -m”feat: add file2”
+    Main:
+        working directory:file1, file2, file3
+        staging:
+        repo:file1
+
+    feat/feature-A:
+        working directory:file1, file2, file3
+        staging:
+        repo:file1 , file2
+
+i. Chạy lệnh: git add file3
+    Main:
+        working directory:file1, file2, file3
+        staging:
+        repo:file1
+
+    feat/feature-A:
+        working directory:file1, file2, file3
+        staging:file3
+        repo:file1 , file2
+
+j. Chạy lệnh: git commit -m”feat: add file3”
+    Main:
+        working directory:file1, file2, file3
+        staging:
+        repo:file1
+
+    feat/feature-A:
+        working directory:file1, file2, file3
+        staging:
+        repo:file1 , file2, file3
+
+k. Chạy lệnh: git checkout -b feat/feature-B
+    Main:
+        working directory:file1, file2, file3
+        staging:
+        repo:file1
+
+    feat/feature-A:
+        working directory:file1, file2, file3
+        staging:
+        repo: file1 , file2, file3
+
+    feat/feature-B:
+        working directory:file1, file2, file3
+        staging:
+        repo: file1 , file2, file3    
+
+    
+
+l. Chạy lệnh: git reset HEAD~2
+    Main:
+        working directory:file1, file2, file3
+        staging:
+        repo:file1
+
+    feat/feature-A:
+        working directory:file1, file2, file3
+        staging:
+        repo: file1 , file2, file3
+
+    feat/feature-B:
+        working directory:file1, file2, file3
+        staging:
+        repo: file1
